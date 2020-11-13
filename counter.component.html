@@ -1,0 +1,21 @@
+<div class="item" *ngIf="initialOffset!==undefined">
+    <h2 [ngStyle]="{
+        'color': letterColor,
+        'font-size': fontLetter
+    }">{{showTime}}</h2>
+    <svg style="background: gray;" [attr.width]="size" [attr.height]="size" xmlns="http://www.w3.org/2000/svg">
+        <circle 
+            [ngStyle]="{
+                'stroke-dashoffset.px': initialOffset,
+                'stroke-dasharray': fijo
+            }"
+            class="circle_animation" 
+            [attr.r]="initialOffsetLong"
+            [attr.cy]="(size/2)"
+            [attr.cx]="(size/2)"
+            [attr.stroke-width]="strokeWidth" 
+            [attr.stroke]="circleColor"
+            [attr.fill]="fill" 
+        />
+    </svg>
+</div>
